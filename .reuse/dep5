@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: icons
+Upstream-Contact: Keith Maxwell <keith.maxwell@gmail.com>
+Source: https://github.com/maxwell-k/icons
+
+Files:
+  .en.utf-8.add
+  .gitignore
+Copyright: 2023 Keith Mawell
+License: CC0-1.0
