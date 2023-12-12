@@ -1,6 +1,8 @@
-Uses [LXD] and [inkscape] to prepare PNG icons.
+Uses [curl], [tar], [LXD] and [inkscape] to prepare PNG icons.
 
 [LXD]: https://ubuntu.com/lxd
+[tar]: https://www.gnu.org/software/tar/
+[curl]: https://curl.se/
 [inkscape]: https://inkscape.org/
 
 Render icons in `png/`:
