@@ -11,6 +11,7 @@ all: \
   png/folder-vm.png \
   png/onedrive.png \
   png/pypi.png \
+  png/targz.png \
   png/template.png \
   png/zip.png \
 
@@ -29,6 +30,13 @@ c1:
 
 .cache/vscode-material-icon-theme-4.32.0: .cache/vscode-material-icon-theme-4.32.0.tar.gz
 
+.cache/Humanity-0.4.6.tar.gz:
+	mkdir --parents $(shell dirname $@)
+	curl --location --output $@ https://launchpad.net/humanity/0.4/0.4/+download/Humanity%5B0.4.6%5D.tar.gz
+	tar -C .cache -xvf $@
+
+.cache/Humanity: .cache/Humanity-0.4.6.tar.gz
+
 png/%.png: svg/%.svg
 	mkdir --parents png
 	lxc exec c1 -- dbus-run-session inkscape \
@@ -46,6 +54,10 @@ svg/onedrive.svg:
 	mkdir --parents svg
 	curl --output $@ \
 		https://upload.wikimedia.org/wikipedia/commons/3/3c/Microsoft_Office_OneDrive_%282019%E2%80%93present%29.svg
+
+svg/targz.svg: .cache/Humanity
+	mkdir --parents svg
+	cp $</mimes/48/application-x-compressed-tar.svg $@
 
 clean:
 	rm -rf .cache png svg
