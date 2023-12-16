@@ -42,9 +42,9 @@ png/%.png: svg/%.svg
 	lxc exec c1 -- dbus-run-session inkscape \
 	  --export-width=512 --export-filename=/srv/$@ /srv/$<
 
-svg/%.svg: .cache/vscode-material-icon-theme-4.32.0.tar.gz
+svg/%.svg: .cache/vscode-material-icon-theme-4.32.0
 	mkdir --parents svg
-	cp $(patsubst %.tar.gz,%,$<)/icons/$(notdir $@) $@
+	cp $</icons/$(notdir $@) $@
 
 svg/pypi.svg:
 	mkdir --parents svg
