@@ -9,11 +9,15 @@ all: \
   png/document.png \
   png/folder-python.png \
   png/folder-vm.png \
+  png/folder.png \
+  png/in.png \
   png/onedrive.png \
   png/pypi.png \
   png/targz.png \
   png/template.png \
+  png/txt.png \
   png/zip.png \
+  png/zip2.png \
 
 
 c1:
@@ -58,6 +62,22 @@ svg/onedrive.svg:
 svg/targz.svg: .cache/Humanity
 	mkdir --parents svg
 	cp $</mimes/48/application-x-compressed-tar.svg $@
+
+svg/zip2.svg: .cache/Humanity
+	mkdir --parents svg
+	cp $</mimes/48/zip.svg $@
+
+svg/in.svg: .cache/Humanity
+	mkdir --parents svg
+	cp $</mimes/48/empty.svg $@
+
+svg/txt.svg: .cache/Humanity
+	mkdir --parents svg
+	cp $</mimes/48/txt.svg $@
+
+svg/folder.svg: .cache/Humanity
+	mkdir --parents svg
+	cp $</places/64/$(notdir $@) $@
 
 clean:
 	rm -rf .cache png svg
