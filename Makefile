@@ -21,11 +21,9 @@ all: \
 
 
 c1:
-	lxc init ubuntu:22.04 c1 \
-	&& lxc config device add c1 shared disk source=$(PWD) path=/srv shift=true \
-	&& lxc start c1 \
-	&& lxc exec c1 -- apt update \
-	&& lxc exec c1 -- apt install --yes inkscape
+	lxc launch --no-profiles ubuntu:22.04 c1 < config.yaml \
+	&& lxc exec c1 -- cloud-init status --wait \
+	&& lxc config device add c1 shared disk source=$(PWD) path=/srv shift=true
 
 .cache/vscode-material-icon-theme-4.32.0.tar.gz:
 	mkdir --parents $(shell dirname $@)
