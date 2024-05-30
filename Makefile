@@ -50,7 +50,7 @@ svg/%.svg: .cache/vscode-material-icon-theme-4.32.0
 
 svg/pypi.svg:
 	mkdir --parents svg
-	curl --output $@ https://pypi.org/static/images/logo-small.2a411bc6.svg
+	curl --output $@ https://pypi.org/static/images/logo-small.8998e9d1.svg
 
 svg/onedrive.svg:
 	mkdir --parents svg
